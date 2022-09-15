@@ -14,7 +14,7 @@ namespace Uebungen
             Console.WriteLine("Geben einen Text ein");
             string txt = Console.ReadLine();
 
-            txt = txt.PadRight(20,'y');
+            txt = txt.PadLeft(30,'y');
                     
 
             Console.WriteLine(txt);
