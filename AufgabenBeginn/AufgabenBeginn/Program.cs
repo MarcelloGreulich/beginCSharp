@@ -11,17 +11,20 @@ namespace Uebungen
         static void Main(string[] args)
         {
             //Ask user for number
-            Console.WriteLine("Geben sie bitte einen Text ein");
-            string txt = Console.ReadLine();
+            Console.WriteLine("Geben sie bitte eine fließkommerzahl ein");
+            float zahl1 = float.Parse(Console.ReadLine());
+            Console.WriteLine("Geben sie bitte eine fließkommerzahl ein");
+            float zahl2 = float.Parse(Console.ReadLine());
 
-            //Count the length of the text
-            int length_txt = txt.Length;
+            //calculate
+            float zahl3 = zahl1+zahl2;
 
-            //print Length of the text
-            Console.WriteLine("Die Länge des eingegebenen Texts is: " + length_txt);
+            //Print sum
+            Console.WriteLine("Das Ergebnis ist:" + zahl3);
 
             //end Programm
-            Console.ReadKey();  
+            Console.ReadKey();
+
 
         }
     }
