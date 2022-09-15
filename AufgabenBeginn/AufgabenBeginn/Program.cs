@@ -11,16 +11,11 @@ namespace Uebungen
         static void Main(string[] args)
         {
             //Ask user for number
-            Console.WriteLine("Geben einen Text mit Semikolon ein");
+            Console.WriteLine("Geben einen Text ein");
             string txt = Console.ReadLine();
 
-            string []split_txt = txt.Split(';');
-
-            for (int i = 0; i < split_txt.Length; i++)
-            {
-                Console.WriteLine(split_txt[i]);
-            }
-            
+            Console.WriteLine(txt.Contains("abc")); 
+           
 
             //end Programm
             Console.ReadKey();
