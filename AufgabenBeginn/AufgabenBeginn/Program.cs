@@ -11,13 +11,13 @@ namespace Uebungen
         static void Main(string[] args)
         {
             //Ask user for number
-            Console.WriteLine("Geben einen Text ein");
+            Console.WriteLine("Geben einen Text mit leerzeichen davor und dannach ein");
             string txt = Console.ReadLine();
 
-            txt = txt.PadLeft(30,'y');
+            string remove_txt = txt.TrimStart(' ').TrimEnd(' ');
                     
 
-            Console.WriteLine(txt);
+            Console.WriteLine(remove_txt);
 
             //end Programm
             Console.ReadKey();
