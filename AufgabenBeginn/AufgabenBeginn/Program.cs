@@ -11,16 +11,15 @@ namespace Uebungen
         static void Main(string[] args)
         {
             //Ask user for number
-            Console.WriteLine("Geben sie die erste Zahl ein");
-            int zahl1 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Geben sie die zweite Zahl ein");
-            int zahl2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Geben sie bitte einen Text ein");
+            string txt = Console.ReadLine();
 
-            //calculate
-            int zahl3 = zahl1+zahl2;
 
-            //print sum
-            Console.WriteLine("Die Summe ihrer Zahlen ist: " + zahl3);
+            //Replace "U" and "u" with "G" and "g"
+            string replaced_txt = txt.Replace("U", "G").Replace("u", "g");
+
+            //print Replaced Text
+            Console.WriteLine("Ihr Veränderter Text ist: " + replaced_txt);
 
             //end Programm
             Console.ReadKey();  
