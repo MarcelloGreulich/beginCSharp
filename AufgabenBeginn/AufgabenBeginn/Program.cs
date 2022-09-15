@@ -10,14 +10,16 @@ namespace Uebungen
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Geben eine Zahl ein");
-            int number1 = Convert.ToInt32(Console.ReadLine());
-            
-            while (number1>0)
+            Console.WriteLine("Azubi&studentenliste nach Buchstaben Filtern");
+            string x = Console.ReadLine();
+            string azubis = "asfd,saedsda,asdasd,awesd";
+            string[] list = azubis.Split(',');
+            for (int i = 0; i < list.Length; i++)
             {
-                number1--;
-                Console.WriteLine(number1);
-                
+                if (list[i].Contains(x))
+                {
+                    Console.WriteLine(list[i]);
+                }
             }
 
             Console.ReadKey();
