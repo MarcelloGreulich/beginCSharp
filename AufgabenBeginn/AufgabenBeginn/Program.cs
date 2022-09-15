@@ -12,11 +12,12 @@ namespace Uebungen
         {
             Console.WriteLine("Geben eine Zahl ein");
             int number1 = Convert.ToInt32(Console.ReadLine());
-            int ergebnis = 0;
-            for (int i = 0; i < number1; i++)
-            { 
-                ergebnis = ergebnis + i;
-                Console.WriteLine(ergebnis-i + "+" + i + "=" + ergebnis); 
+            
+            while (number1>0)
+            {
+                number1--;
+                Console.WriteLine(number1);
+                
             }
 
             Console.ReadKey();
