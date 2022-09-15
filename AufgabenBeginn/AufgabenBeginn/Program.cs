@@ -14,12 +14,11 @@ namespace Uebungen
             Console.WriteLine("Geben sie bitte einen Text ein");
             string txt = Console.ReadLine();
 
+            //Count the length of the text
+            int length_txt = txt.Length;
 
-            //Replace "U" and "u" with "G" and "g"
-            string replaced_txt = txt.Replace("U", "G").Replace("u", "g");
-
-            //print Replaced Text
-            Console.WriteLine("Ihr Veränderter Text ist: " + replaced_txt);
+            //print Length of the text
+            Console.WriteLine("Die Länge des eingegebenen Texts is: " + length_txt);
 
             //end Programm
             Console.ReadKey();  
