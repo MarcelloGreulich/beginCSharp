@@ -11,27 +11,39 @@ namespace Uebungen
     {
         public static void Main(string[] args)
         {
-            for(int i = 1; i < 100; i++)
+            Console.WriteLine("Wie viele Nummern sollen gespeichert werden");
+            int count = Convert.ToInt32(Console.ReadLine());
+            int[] numbers = new int[count];
+            for (int i = 0; i < count; i++)
             {
-                if (i % 3 == 0)
-                {
-                    Console.WriteLine("Fizz");
-                }
-                else if (i % 5 == 0)
-                {
-                    Console.WriteLine("Buzz");
-                }
-                else if (i % 3 == 0 && i % 5 == 0)
-                {
-                    Console.WriteLine("FizzBuzz");
-                }
-                else
-                {
-                    Console.WriteLine(i);  
-                }
-
+                Console.WriteLine("Bitte eine Zahl eingeben");
+                int number = Convert.ToInt32(Console.ReadLine());
+                numbers[i] = number;
             }
-                Console.ReadKey();
+            Console.Clear();
+
+            int min = numbers[0];
+            int max = numbers[0];
+            float avg = 0;
+
+            for (int i = 0; i < count; i++)
+            {
+                if (max < numbers[i])
+                {
+                    max = numbers[i];
+                }
+                if(min > numbers[i])
+                {
+                    min = numbers[i];
+                }
+                avg = avg + numbers[i];
+            }
+
+            Console.WriteLine("Der Maximal wert ist: " + max);
+            Console.WriteLine("Der Minimal wert ist: " + min);
+            Console.WriteLine("Der Durchschnitt ist: " + avg/numbers.Length);
+
+            Console.ReadKey();
         }     
     }
 }
