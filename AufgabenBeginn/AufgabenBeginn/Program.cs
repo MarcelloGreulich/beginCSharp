@@ -11,37 +11,138 @@ namespace Uebungen
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Wie viele Nummern sollen gespeichert werden");
-            int count = Convert.ToInt32(Console.ReadLine());
-            int[] numbers = new int[count];
-            for (int i = 0; i < count; i++)
-            {
-                Console.WriteLine("Bitte eine Zahl eingeben");
-                int number = Convert.ToInt32(Console.ReadLine());
-                numbers[i] = number;
-            }
+
+            Console.WriteLine("gib mir ein wort");
+            string wort = Console.ReadLine();
             Console.Clear();
 
-            int min = numbers[0];
-            int max = numbers[0];
-            float avg = 0;
+            var placeholder = new List<string>();
 
-            for (int i = 0; i < count; i++)
+            for (int i = 0; i < wort.Length; i++)
             {
-                if (max < numbers[i])
-                {
-                    max = numbers[i];
-                }
-                if(min > numbers[i])
-                {
-                    min = numbers[i];
-                }
-                avg = avg + numbers[i];
+                placeholder.Add(" _ ");
+                Console.Write(placeholder[i]);
             }
 
-            Console.WriteLine("Der Maximal wert ist: " + max);
-            Console.WriteLine("Der Minimal wert ist: " + min);
-            Console.WriteLine("Der Durchschnitt ist: " + avg/numbers.Length);
+
+
+            int live = 10;
+            while (live > 0)
+            {
+                Console.WriteLine(" ");
+                Console.WriteLine("Buchstaben wählen");
+                string buchstabe = Console.ReadLine();
+
+                Console.Clear();
+
+                char[] newWort = wort.ToCharArray();
+
+                if (wort.Contains(buchstabe))
+                {
+                    Console.WriteLine("Rchtig!");                }
+                else
+                {
+                    Console.WriteLine("Falsch!");
+                    live--;
+                }
+
+                for (int x = 0; x < newWort.Length; x++)
+                {
+                    
+                    if (newWort[x] == Convert.ToChar(buchstabe))
+                    {
+                        placeholder[x] = buchstabe;
+                       
+                    }
+                    Console.Write(placeholder[x]);
+
+                }
+
+                Console.WriteLine(" ");
+
+                if (wort.Contains(buchstabe))
+                { 
+                    if (Convert.ToString(placeholder) == Convert.ToString(wort))
+                    {
+                        Console.WriteLine("Sie haben noch " + live + " übrig");
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Sie haben Gewonnen");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Sie haben noch " + live + " übrig");
+                    if (live == 9)
+                    {
+                        Console.WriteLine("/\\");
+                    }
+                    else if (live == 8)
+                    {
+                        Console.WriteLine("| ");
+                        Console.WriteLine("/\\");
+                    }
+                    else if (live == 7)
+                    {
+
+                        Console.WriteLine("|");
+                        Console.WriteLine("|");
+                        Console.WriteLine("/\\");
+                    }
+                    else if (live == 6)
+                    {
+                        Console.WriteLine("_____");
+                        Console.WriteLine("|");
+                        Console.WriteLine("|");
+                        Console.WriteLine("/\\");
+                    }else if (live == 5)
+                    {
+                        Console.WriteLine("_____");
+                        Console.WriteLine("|   O");
+                        Console.WriteLine("|");
+                        Console.WriteLine("/\\");
+                    }
+                    else if (live == 4)
+                    {
+                        Console.WriteLine("_____");
+                        Console.WriteLine("|   O");
+                        Console.WriteLine("|   |");
+                        Console.WriteLine("/\\");
+                    }
+                    else if (live == 3)
+                    {
+                        Console.WriteLine("_____");
+                        Console.WriteLine("|   O");
+                        Console.WriteLine("|  -|");
+                        Console.WriteLine("/\\");
+                    }
+                    else if (live == 2)
+                    {
+                        Console.WriteLine("_____");
+                        Console.WriteLine("|   O");
+                        Console.WriteLine("|  -|-");
+                        Console.WriteLine("/\\  ");
+                    }
+                    else if (live == 1)
+                    {
+                        Console.WriteLine("_____");
+                        Console.WriteLine("|   O");
+                        Console.WriteLine("|  -|-");
+                        Console.WriteLine("/\\  /");
+                    }
+                    else if (live == 0)
+                    {
+                    Console.WriteLine("_____");
+                    Console.WriteLine("|   O");
+                    Console.WriteLine("|  -|-");
+                    Console.WriteLine("/\\  /\\");
+                    }
+
+                }
+
+            }
 
             Console.ReadKey();
         }     
