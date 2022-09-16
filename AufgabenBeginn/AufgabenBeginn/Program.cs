@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -8,32 +7,51 @@ using System.Threading.Tasks;
 
 namespace Uebungen
 {
-    internal class Program
+    internal class Programm
     {
         public static void Main(string[] args)
         {
+            Console.WriteLine("Blitte gebe eine Zahl an");
+            int zahl1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Blitte gebe eine Zahl an");
+            int zahl2 = Convert.ToInt32(Console.ReadLine());
 
-           List<string> names = new List<string>();
+            float[] ergebniss = new float[4];
 
-            Console.WriteLine("wie viele namen wollen sie speichern?");
-            int count = Convert.ToInt32(Console.ReadLine());
+            ergebniss[0] = Add(zahl1, zahl2);
+            ergebniss[1] = Sub(zahl1, zahl2);
+            ergebniss[2] = Multi(zahl1, zahl2);
+            ergebniss[3] = Div(zahl1, zahl2);
 
-            for(int i = 0; i < count; i++)
+            foreach (var item in ergebniss)
             {
-                Console.WriteLine("Bitte geben Sie den ersten namen ein");
-                string name = Console.ReadLine();
-                names.Add(name);
+                Console.WriteLine(item);
             }
-
-            Console.Clear();
-
-            foreach (var name in names)
-            {
-                Console.WriteLine(name);
-            }
-
+            
             Console.ReadKey();
 
+        }
+
+        static float Add(int zahl1, int zahl2)
+        {
+            float summe = zahl1 + zahl2;
+            return summe;
+        }
+
+        static float Sub(int zahl1, int zahl2)
+        {
+            float summe = zahl1 - zahl2;
+            return summe;
+        }
+        static float Multi(int zahl1, int zahl2)
+        {
+            float summe = zahl1 * zahl2;
+            return summe;
+        }
+        static float Div(int zahl1, int zahl2)
+        {
+            float summe = zahl1 / zahl2;
+            return summe;
         }
     }
 }

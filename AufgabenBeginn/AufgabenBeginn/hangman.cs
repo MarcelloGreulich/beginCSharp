@@ -48,11 +48,26 @@ namespace Uebungen
                 for (int x = 0; x < newWort.Length; x++)
                 {
 
+                    if (buchstabe == "" || buchstabe.Length > 1)
+                    {
+                        if (Convert.ToString(placeholder) == Convert.ToString(wort))
+                        {
+                            Console.WriteLine("Sie haben Gewonnen");
+                            Console.ReadKey();
+                            break;
+                        }
+                        else
+                        {
+                            return Main();
+                        }
+                    }
+
                     if (newWort[x] == Convert.ToChar(buchstabe))
                     {
                         placeholder[x] = buchstabe;
 
                     }
+
                     Console.Write(placeholder[x]);
 
                 }
@@ -60,84 +75,13 @@ namespace Uebungen
 
                 if (wort.Contains(buchstabe))
                 {
-                    if (Convert.ToString(placeholder) == Convert.ToString(wort))
-                    {
-                        Console.WriteLine("Sie haben noch " + live + " übrig");
-                        break;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Sie haben Gewonnen");
-                    }
+                    Console.WriteLine("Sie haben noch " + live + " übrig");
                 }
                 else
                 {
                     Console.WriteLine("Sie haben noch " + live + " übrig");
-                    if (live == 9)
-                    {
-                        Console.WriteLine("/\\");
-                    }
-                    else if (live == 8)
-                    {
-                        Console.WriteLine("| ");
-                        Console.WriteLine("/\\");
-                    }
-                    else if (live == 7)
-                    {
 
-                        Console.WriteLine("|");
-                        Console.WriteLine("|");
-                        Console.WriteLine("/\\");
-                    }
-                    else if (live == 6)
-                    {
-                        Console.WriteLine("_____");
-                        Console.WriteLine("|");
-                        Console.WriteLine("|");
-                        Console.WriteLine("/\\");
-                    }
-                    else if (live == 5)
-                    {
-                        Console.WriteLine("_____");
-                        Console.WriteLine("|   O");
-                        Console.WriteLine("|");
-                        Console.WriteLine("/\\");
-                    }
-                    else if (live == 4)
-                    {
-                        Console.WriteLine("_____");
-                        Console.WriteLine("|   O");
-                        Console.WriteLine("|   |");
-                        Console.WriteLine("/\\");
-                    }
-                    else if (live == 3)
-                    {
-                        Console.WriteLine("_____");
-                        Console.WriteLine("|   O");
-                        Console.WriteLine("|  -|");
-                        Console.WriteLine("/\\");
-                    }
-                    else if (live == 2)
-                    {
-                        Console.WriteLine("_____");
-                        Console.WriteLine("|   O");
-                        Console.WriteLine("|  -|-");
-                        Console.WriteLine("/\\  ");
-                    }
-                    else if (live == 1)
-                    {
-                        Console.WriteLine("_____");
-                        Console.WriteLine("|   O");
-                        Console.WriteLine("|  -|-");
-                        Console.WriteLine("/\\  /");
-                    }
-                    else if (live == 0)
-                    {
-                        Console.WriteLine("_____");
-                        Console.WriteLine("|   O");
-                        Console.WriteLine("|  -|-");
-                        Console.WriteLine("/\\  /\\");
-                    }
+                    Zeichnen();
 
                 }
 
@@ -145,6 +89,75 @@ namespace Uebungen
 
             Console.ReadKey();
 
+        }
+
+        static void Zeichnen()
+        {
+            if (live == 9)
+            {
+                Console.WriteLine("/\\");
+            }
+            else if (live == 8)
+            {
+                Console.WriteLine("| ");
+                Console.WriteLine("/\\");
+            }
+            else if (live == 7)
+            {
+
+                Console.WriteLine("|");
+                Console.WriteLine("|");
+                Console.WriteLine("/\\");
+            }
+            else if (live == 6)
+            {
+                Console.WriteLine("_____");
+                Console.WriteLine("|");
+                Console.WriteLine("|");
+                Console.WriteLine("/\\");
+            }
+            else if (live == 5)
+            {
+                Console.WriteLine("_____");
+                Console.WriteLine("|   O");
+                Console.WriteLine("|");
+                Console.WriteLine("/\\");
+            }
+            else if (live == 4)
+            {
+                Console.WriteLine("_____");
+                Console.WriteLine("|   O");
+                Console.WriteLine("|   |");
+                Console.WriteLine("/\\");
+            }
+            else if (live == 3)
+            {
+                Console.WriteLine("_____");
+                Console.WriteLine("|   O");
+                Console.WriteLine("|  -|");
+                Console.WriteLine("/\\");
+            }
+            else if (live == 2)
+            {
+                Console.WriteLine("_____");
+                Console.WriteLine("|   O");
+                Console.WriteLine("|  -|-");
+                Console.WriteLine("/\\  ");
+            }
+            else if (live == 1)
+            {
+                Console.WriteLine("_____");
+                Console.WriteLine("|   O");
+                Console.WriteLine("|  -|-");
+                Console.WriteLine("/\\  /");
+            }
+            else if (live == 0)
+            {
+                Console.WriteLine("_____");
+                Console.WriteLine("|   O");
+                Console.WriteLine("|  -|-");
+                Console.WriteLine("/\\  /\\");
+            }
         }
     }
 }
