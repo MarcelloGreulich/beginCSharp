@@ -11,47 +11,50 @@ namespace Uebungen
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Blitte gebe eine Zahl an");
-            int zahl1 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Blitte gebe eine Zahl an");
-            int zahl2 = Convert.ToInt32(Console.ReadLine());
+            List<int> list = new List<int>() {5,3,7};
 
-            float[] ergebniss = new float[4];
+            string a = "y";
+            int number;
 
-            ergebniss[0] = Add(zahl1, zahl2);
-            ergebniss[1] = Sub(zahl1, zahl2);
-            ergebniss[2] = Multi(zahl1, zahl2);
-            ergebniss[3] = Div(zahl1, zahl2);
+            Console.Write($"Möchten sie außer ");
+            foreach (var item in list)
+            {
+                Console.Write(item + ", ");
+            }
+            Console.Write("noch weitere Zahlen hinzufügen? (y/n)");
+            Console.WriteLine(" ");
+            a = Console.ReadLine();
 
-            foreach (var item in ergebniss)
+            do
+            {
+                Console.WriteLine("welche zahlen wollen sie nocch hinzufügen");
+                number = Convert.ToInt32(Console.ReadLine());
+                list.Add(number);
+
+
+                Console.Write($"Möchten sie außer ");
+                foreach (var item in list)
+                {
+                    Console.Write(item + ", ");
+                }
+                Console.Write("noch weitere Zahlen hinzufügen? (y/n)");
+                Console.WriteLine(" ");
+                a = Console.ReadLine();
+            } while (a == "y");
+
+
+                foreach (var item in list)
             {
                 Console.WriteLine(item);
             }
-            
+
             Console.ReadKey();
 
+
+            
+            
+
         }
 
-        static float Add(int zahl1, int zahl2)
-        {
-            float summe = zahl1 + zahl2;
-            return summe;
-        }
-
-        static float Sub(int zahl1, int zahl2)
-        {
-            float summe = zahl1 - zahl2;
-            return summe;
-        }
-        static float Multi(int zahl1, int zahl2)
-        {
-            float summe = zahl1 * zahl2;
-            return summe;
-        }
-        static float Div(int zahl1, int zahl2)
-        {
-            float summe = zahl1 / zahl2;
-            return summe;
-        }
     }
 }
