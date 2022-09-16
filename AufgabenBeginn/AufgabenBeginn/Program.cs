@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -12,46 +13,27 @@ namespace Uebungen
         public static void Main(string[] args)
         {
 
-            Console.WriteLine("Geben sie eine Zahl ein");
-            int number1 = Convert.ToInt32(Console.ReadLine());
+           List<string> names = new List<string>();
 
-            Console.WriteLine("Geben sie eine Operator ein (+, -, *, /, %, %%)");
-            string op  = Console.ReadLine();
+            Console.WriteLine("wie viele namen wollen sie speichern?");
+            int count = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Geben sie eine Zahl ein");
-            int number2 = Convert.ToInt32(Console.ReadLine());
-
-            switch (op)
+            for(int i = 0; i < count; i++)
             {
-                case "+":
-                    Console.WriteLine($"{number1} + {number2} = {number1 + number2}");
-                    break;
-                case "-":
-                    Console.WriteLine($"{number1} - {number2} = {number1 - number2}");
-                    break;
-                case "*":
-                    Console.WriteLine($"{number1} * {number2} = {number1 * number2}");
-                    break;
-                case "/":
-                    if(number1==0 || number2 == 0)
-                    {
-                        Console.WriteLine($"{number1} / {number2} = 0");
-                    }
-                    else
-                    {
-                        Console.WriteLine($"{number1} / {number2} = {(float)number1 / (float)number2}");
-                    }
-                    break;
-                case "%":
-                    Console.WriteLine($"{number1} % {number2} = {(float)number1 * ((float)number2 /100)}");
-                    break;
-                case "%%":
-                    Console.WriteLine($"{number1} %% {number2} = {(float)number1 % (float)number2}");
-                    break;
+                Console.WriteLine("Bitte geben Sie den ersten namen ein");
+                string name = Console.ReadLine();
+                names.Add(name);
+            }
 
+            Console.Clear();
+
+            foreach (var name in names)
+            {
+                Console.WriteLine(name);
             }
 
             Console.ReadKey();
-        }     
+
+        }
     }
 }
