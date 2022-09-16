@@ -10,23 +10,22 @@ namespace Uebungen
     internal class Programm
     {
         public static void Main(string[] args)
-        {
-            List<int> list = new List<int>() {5,3,7};
-            
-            Console.WriteLine(Sum(list)); 
+        {   
+            Console.WriteLine("Bitte geben sie eine zahl an");
+            int num1 = Convert.ToInt32(Console.ReadLine()); 
+            Console.WriteLine("Bitte geben sie eine zahl an");
+            int num2 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine(Sum(num1, num2));
 
             Console.ReadKey();
             
         }
 
-        static int Sum(List<int> list)
+        static int Sum(int num1, int num2)
         {
             int sum = 0;
-            foreach (var item in list)
-            {
-                sum = sum + item;
-            }
-
+            sum = num1 + num2;
             return sum;
         }
 
