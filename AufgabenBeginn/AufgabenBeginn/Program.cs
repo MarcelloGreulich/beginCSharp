@@ -12,9 +12,9 @@ namespace Uebungen
         public static void Main(string[] args)
         {   
             Console.WriteLine("Bitte geben sie eine zahl an");
-            int num1 = Convert.ToInt32(Console.ReadLine()); 
+            string num1 = Console.ReadLine(); 
             Console.WriteLine("Bitte geben sie eine zahl an");
-            int num2 = Convert.ToInt32(Console.ReadLine());
+            string num2 =Console.ReadLine();
 
             Console.WriteLine(Sum(num1, num2));
 
@@ -22,9 +22,9 @@ namespace Uebungen
             
         }
 
-        static int Sum(int num1, int num2)
+        static string Sum(string num1,  string num2)
         {
-            int sum = 0;
+            string sum;
             sum = num1 + num2;
             return sum;
         }
