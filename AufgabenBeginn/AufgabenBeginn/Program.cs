@@ -12,135 +12,42 @@ namespace Uebungen
         public static void Main(string[] args)
         {
 
-            Console.WriteLine("gib mir ein wort");
-            string wort = Console.ReadLine();
-            Console.Clear();
+            Console.WriteLine("Geben sie eine Zahl ein");
+            int number1 = Convert.ToInt32(Console.ReadLine());
 
-            var placeholder = new List<string>();
+            Console.WriteLine("Geben sie eine Operator ein (+, -, *, /, %, %%)");
+            string op  = Console.ReadLine();
 
-            for (int i = 0; i < wort.Length; i++)
+            Console.WriteLine("Geben sie eine Zahl ein");
+            int number2 = Convert.ToInt32(Console.ReadLine());
+
+            switch (op)
             {
-                placeholder.Add(" _ ");
-                Console.Write(placeholder[i]);
-            }
-
-
-
-            int live = 10;
-            while (live > 0)
-            {
-                Console.WriteLine(" ");
-                Console.WriteLine("Buchstaben wählen");
-                string buchstabe = Console.ReadLine();
-
-                Console.Clear();
-
-                char[] newWort = wort.ToCharArray();
-
-                if (wort.Contains(buchstabe))
-                {
-                    Console.WriteLine("Rchtig!");                }
-                else
-                {
-                    Console.WriteLine("Falsch!");
-                    live--;
-                }
-
-                for (int x = 0; x < newWort.Length; x++)
-                {
-                    
-                    if (newWort[x] == Convert.ToChar(buchstabe))
+                case "+":
+                    Console.WriteLine($"{number1} + {number2} = {number1 + number2}");
+                    break;
+                case "-":
+                    Console.WriteLine($"{number1} - {number2} = {number1 - number2}");
+                    break;
+                case "*":
+                    Console.WriteLine($"{number1} * {number2} = {number1 * number2}");
+                    break;
+                case "/":
+                    if(number1==0 || number2 == 0)
                     {
-                        placeholder[x] = buchstabe;
-                       
-                    }
-                    Console.Write(placeholder[x]);
-
-                }
-
-                Console.WriteLine(" ");
-
-                if (wort.Contains(buchstabe))
-                { 
-                    if (Convert.ToString(placeholder) == Convert.ToString(wort))
-                    {
-                        Console.WriteLine("Sie haben noch " + live + " übrig");
-                        break;
+                        Console.WriteLine($"{number1} / {number2} = 0");
                     }
                     else
                     {
-                        Console.WriteLine("Sie haben Gewonnen");
+                        Console.WriteLine($"{number1} / {number2} = {(float)number1 / (float)number2}");
                     }
-                }
-                else
-                {
-                    Console.WriteLine("Sie haben noch " + live + " übrig");
-                    if (live == 9)
-                    {
-                        Console.WriteLine("/\\");
-                    }
-                    else if (live == 8)
-                    {
-                        Console.WriteLine("| ");
-                        Console.WriteLine("/\\");
-                    }
-                    else if (live == 7)
-                    {
-
-                        Console.WriteLine("|");
-                        Console.WriteLine("|");
-                        Console.WriteLine("/\\");
-                    }
-                    else if (live == 6)
-                    {
-                        Console.WriteLine("_____");
-                        Console.WriteLine("|");
-                        Console.WriteLine("|");
-                        Console.WriteLine("/\\");
-                    }else if (live == 5)
-                    {
-                        Console.WriteLine("_____");
-                        Console.WriteLine("|   O");
-                        Console.WriteLine("|");
-                        Console.WriteLine("/\\");
-                    }
-                    else if (live == 4)
-                    {
-                        Console.WriteLine("_____");
-                        Console.WriteLine("|   O");
-                        Console.WriteLine("|   |");
-                        Console.WriteLine("/\\");
-                    }
-                    else if (live == 3)
-                    {
-                        Console.WriteLine("_____");
-                        Console.WriteLine("|   O");
-                        Console.WriteLine("|  -|");
-                        Console.WriteLine("/\\");
-                    }
-                    else if (live == 2)
-                    {
-                        Console.WriteLine("_____");
-                        Console.WriteLine("|   O");
-                        Console.WriteLine("|  -|-");
-                        Console.WriteLine("/\\  ");
-                    }
-                    else if (live == 1)
-                    {
-                        Console.WriteLine("_____");
-                        Console.WriteLine("|   O");
-                        Console.WriteLine("|  -|-");
-                        Console.WriteLine("/\\  /");
-                    }
-                    else if (live == 0)
-                    {
-                    Console.WriteLine("_____");
-                    Console.WriteLine("|   O");
-                    Console.WriteLine("|  -|-");
-                    Console.WriteLine("/\\  /\\");
-                    }
-
-                }
+                    break;
+                case "%":
+                    Console.WriteLine($"{number1} % {number2} = {(float)number1 * ((float)number2 /100)}");
+                    break;
+                case "%%":
+                    Console.WriteLine($"{number1} %% {number2} = {(float)number1 % (float)number2}");
+                    break;
 
             }
 
