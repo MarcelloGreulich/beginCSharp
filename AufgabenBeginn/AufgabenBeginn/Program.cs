@@ -11,63 +11,24 @@ namespace Uebungen
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Wie viele Nummern sollen gespeichert werden");
+            int count = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("gib mir ein wort");
-            string wort = Console.ReadLine();
-            Console.Clear();
+            int[] numbers = new int[count];
 
-            var placeholder = new List<string>();
-
-            for (int i = 0; i < wort.Length; i++)
+            for (int i = 0; i < count; i++)
             {
-                placeholder.Add(" _ ");
-                Console.Write(placeholder[i]);
+                Console.WriteLine("Bitte eine Zahl eingeben");
+                int number = Convert.ToInt32(Console.ReadLine());
+                numbers[i] = number;
+
             }
 
-            
+            Console.Clear();   
 
-            int live = 10;
-            while ( live > 0)
-            {
-                Console.WriteLine(" ");
-                Console.WriteLine("Buchstaben wählen");
-                string buchstabe = Console.ReadLine();
-
-                char[] newWort = wort.ToCharArray();
-       
-                for (int x = 0; x < newWort.Length; x++)
-                {
-
-                    Console.WriteLine(newWort[x]);
-                    if (newWort[x]==Convert.ToChar(buchstabe))
-                    {
-                        Console.WriteLine("test");
-             
-                    }
-                    
-                }
-
-                if (wort.Contains(buchstabe))
-                {
-                    Console.WriteLine("Rchtig!");
-                    Console.WriteLine("Sie haben noch " + live + " übrig");
-                }
-                else { 
-                    Console.WriteLine("Falsch!");
-                    live--;
-                    Console.WriteLine("Sie haben noch " + live + " übrig");
-                }
-
-
-                
-            }
-
-
-            /*  _____
-              |   O
-              |  -|-
-             /\   /\
-            */
+            Console.WriteLine("Der Maximal wert ist: " + numbers.Max());
+            Console.WriteLine("Der Minimal wert ist: " + numbers.Min());
+            Console.WriteLine("Der Durchschnitt ist: " + numbers.Average());
 
             Console.ReadKey();
         }
