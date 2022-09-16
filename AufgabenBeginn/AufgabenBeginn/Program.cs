@@ -9,28 +9,29 @@ namespace Uebungen
 {
     internal class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Wie viele Nummern sollen gespeichert werden");
-            int count = Convert.ToInt32(Console.ReadLine());
-
-            int[] numbers = new int[count];
-
-            for (int i = 0; i < count; i++)
+            for(int i = 1; i < 100; i++)
             {
-                Console.WriteLine("Bitte eine Zahl eingeben");
-                int number = Convert.ToInt32(Console.ReadLine());
-                numbers[i] = number;
+                if (i % 3 == 0)
+                {
+                    Console.WriteLine("Fizz");
+                }
+                else if (i % 5 == 0)
+                {
+                    Console.WriteLine("Buzz");
+                }
+                else if (i % 3 == 0 && i % 5 == 0)
+                {
+                    Console.WriteLine("FizzBuzz");
+                }
+                else
+                {
+                    Console.WriteLine(i);  
+                }
 
             }
-
-            Console.Clear();   
-
-            Console.WriteLine("Der Maximal wert ist: " + numbers.Max());
-            Console.WriteLine("Der Minimal wert ist: " + numbers.Min());
-            Console.WriteLine("Der Durchschnitt ist: " + numbers.Average());
-
-            Console.ReadKey();
-        }
+                Console.ReadKey();
+        }     
     }
 }
